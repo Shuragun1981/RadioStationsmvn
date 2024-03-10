@@ -21,18 +21,18 @@ public class Radio {
         currentRadioStationNumber = 9;
     }
 
-    public void SwitchChannelsWithButtonNext() {
-        if (currentRadioStationNumber < 9) {
-            currentRadioStationNumber = currentRadioStationNumber + 1;
-        } else {
+    public void switchChannelsWithButtonNext() {
+        if (currentRadioStationNumber == 9) {
             currentRadioStationNumber = 0;
+        } else {
+            currentRadioStationNumber ++;
         }
     }
 
-    public void SwitchChannelsWithButtonPrev() {
-        if (currentRadioStationNumber > 0) {
-            currentRadioStationNumber = currentRadioStationNumber - 1;
-        }
+    public void switchChannelsWithButtonPrev() {
+        if (currentRadioStationNumber == 0) {
+            currentRadioStationNumber = 9;
+        } else {currentRadioStationNumber --;}
     }
 
     public int getSoundVolume() {
@@ -55,14 +55,14 @@ public class Radio {
 
     public void increaseSoundVolumeWithButtonPlus() {
         if (soundVolume < 100) {
-            soundVolume = soundVolume + 1;
+            soundVolume ++;
         } else {
             soundVolume = 100;
         }
     }
         public void increaseSoundVolumeWithButtonMinus () {
             if (soundVolume > 0) {
-                soundVolume = soundVolume - 1;
+                soundVolume --;
             }
         }
     }

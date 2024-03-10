@@ -38,19 +38,19 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
     @Test
-    public void SwitchChannelsWithButtonNext() {
+    public void switchChannelsWithButtonNext() {
         Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(8);
-        radio.SwitchChannelsWithButtonNext();
+        radio.switchChannelsWithButtonNext();
         int expected = 9;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
     @Test
-    public void SwitchChannelsWithButtonNext1() {
+    public void switchChannelsWithButtonNext1() {
         Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(9);
-        radio.SwitchChannelsWithButtonNext();
+        radio.switchChannelsWithButtonNext();
         int expected = 0;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
@@ -59,7 +59,7 @@ public class RadioTest {
     public void switchChannelsWithButtonPrev() {
         Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(2);
-        radio.SwitchChannelsWithButtonPrev();
+        radio.switchChannelsWithButtonPrev();
         int expected = 1;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
@@ -68,8 +68,8 @@ public class RadioTest {
     public void limitSwitchChannelsWithButtonPrev() {
         Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(0);
-        radio.SwitchChannelsWithButtonPrev();
-        int expected = 0;
+        radio.switchChannelsWithButtonPrev();
+        int expected = 9;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
