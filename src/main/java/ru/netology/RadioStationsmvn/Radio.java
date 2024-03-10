@@ -1,7 +1,8 @@
 package ru.netology.RadioStationsmvn;
+
 public class Radio {
-    public int currentRadioStationNumber;
-    public int soundVolume;
+    private int currentRadioStationNumber;
+    private int soundVolume;
 
     public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
@@ -25,14 +26,16 @@ public class Radio {
         if (currentRadioStationNumber == 9) {
             currentRadioStationNumber = 0;
         } else {
-            currentRadioStationNumber ++;
+            currentRadioStationNumber++;
         }
     }
 
     public void switchChannelsWithButtonPrev() {
         if (currentRadioStationNumber == 0) {
             currentRadioStationNumber = 9;
-        } else {currentRadioStationNumber --;}
+        } else {
+            currentRadioStationNumber--;
+        }
     }
 
     public int getSoundVolume() {
@@ -55,16 +58,17 @@ public class Radio {
 
     public void increaseSoundVolumeWithButtonPlus() {
         if (soundVolume < 100) {
-            soundVolume ++;
+            soundVolume++;
         } else {
             soundVolume = 100;
         }
     }
-        public void increaseSoundVolumeWithButtonMinus () {
-            if (soundVolume > 0) {
-                soundVolume --;
-            }
+
+    public void increaseSoundVolumeWithButtonMinus() {
+        if (soundVolume > 0) {
+            soundVolume--;
         }
     }
+}
 
 

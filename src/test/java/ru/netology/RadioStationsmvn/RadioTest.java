@@ -1,4 +1,5 @@
 package ru.netology.RadioStationsmvn;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -29,6 +30,7 @@ public class RadioTest {
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSetToBelowMaxChannel() {
         Radio radio = new Radio();
@@ -37,6 +39,7 @@ public class RadioTest {
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void switchChannelsWithButtonNext() {
         Radio radio = new Radio();
@@ -46,6 +49,7 @@ public class RadioTest {
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void switchChannelsWithButtonNext1() {
         Radio radio = new Radio();
@@ -55,6 +59,7 @@ public class RadioTest {
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void switchChannelsWithButtonPrev() {
         Radio radio = new Radio();
@@ -64,6 +69,7 @@ public class RadioTest {
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void limitSwitchChannelsWithButtonPrev() {
         Radio radio = new Radio();
@@ -73,6 +79,7 @@ public class RadioTest {
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSoundVolume() {
         Radio radio = new Radio();
@@ -81,6 +88,7 @@ public class RadioTest {
         int actual = radio.getSoundVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSetToMaxSoundVolume() {
         Radio radio = new Radio();
@@ -89,6 +97,7 @@ public class RadioTest {
         int actual = radio.getSoundVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSetToAboveSoundVolume() {
         Radio radio = new Radio();
@@ -97,6 +106,7 @@ public class RadioTest {
         int actual = radio.getSoundVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSetToBelowSoundVolume() {
         Radio radio = new Radio();
@@ -105,6 +115,7 @@ public class RadioTest {
         int actual = radio.getSoundVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void increaseSoundVolumeWithButtonPlus() {
         Radio radio = new Radio();
@@ -114,6 +125,7 @@ public class RadioTest {
         int actual = radio.getSoundVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void limitIncreaseSoundVolumeWithButtonPlus() {
         Radio radio = new Radio();
@@ -123,6 +135,7 @@ public class RadioTest {
         int actual = radio.getSoundVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void decreaseSoundVolumeWithButtonMinus() {
         Radio radio = new Radio();
@@ -132,6 +145,7 @@ public class RadioTest {
         int actual = radio.getSoundVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void limitDecreaseSoundVolumeWithButtonMinus1() {
         Radio radio = new Radio();
