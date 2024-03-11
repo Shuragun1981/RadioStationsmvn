@@ -1,5 +1,12 @@
 package ru.netology.RadioStationsmvn;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Radio {
     private int maxRadioStationNumber = 9;
     private int minRadioStationNumber = 0;
@@ -108,5 +115,9 @@ public class Radio {
         }
     }
 }
+
+    
+
+
 
 
