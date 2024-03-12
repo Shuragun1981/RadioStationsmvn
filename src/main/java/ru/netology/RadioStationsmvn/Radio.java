@@ -1,32 +1,32 @@
 package ru.netology.RadioStationsmvn;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 public class Radio {
-    private int maxRadioStationNumber = 9;
-    private int minRadioStationNumber = 0;
-    private int maxSoundVolume = 100;
-    private int minSoundVolume = 0;
-    private int numberOfRadioChannels = 10;
+    private int maxRadioStationNumber;
+    private int minRadioStationNumber;
+    private int maxSoundVolume;
+    private int minSoundVolume;
+    private int numberOfRadioChannels;
     private int currentRadioStationNumber;
     private int soundVolume;
 
-    public Radio(int maxRadioStationNumber, int minRadioStationNumber, int maxSoundVolume, int minSoundVolume) {
-        this.maxRadioStationNumber = maxRadioStationNumber;
-        this.minRadioStationNumber = minRadioStationNumber;
-        this.maxSoundVolume = maxSoundVolume;
-        this.minSoundVolume = minSoundVolume;
+    public Radio() {                           // без параметров
+        this.maxRadioStationNumber = 9;
+        this.minRadioStationNumber = 0;
+        this.maxSoundVolume = 100;
+        this.minSoundVolume = 0;
+        this.numberOfRadioChannels = 10;
+        this.soundVolume = 50;
+        this.currentRadioStationNumber = 0;
     }
 
-    public Radio(int numberOfRadioChannels) {
+    public Radio(int numberOfRadioChannels) { // с одним параметром принимающим желаемое количество радиостанций
         minRadioStationNumber = 1;
-        maxRadioStationNumber = minRadioStationNumber + numberOfRadioChannels -1;
+        maxRadioStationNumber = minRadioStationNumber + numberOfRadioChannels - 1;
         this.numberOfRadioChannels = numberOfRadioChannels;
+        maxSoundVolume = 100;
+        minSoundVolume = 0;
+        currentRadioStationNumber = 0;
+        soundVolume = 50;
     }
 
     public int getMaxRadioStationNumber() {
@@ -115,9 +115,3 @@ public class Radio {
         }
     }
 }
-
-    
-
-
-
-
