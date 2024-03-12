@@ -14,6 +14,7 @@ public class Radio {
     private int currentRadioStationNumber;
     private int soundVolume;
 
+
     public Radio() {
         this.maxRadioStationNumber = 9;
         this.minRadioStationNumber = 0;
@@ -188,7 +189,7 @@ public class Radio {
     }
 
     public int hashCode() {
-        int PRIME = true;
+        boolean PRIME = true;
         int result = 1;
         result = result * 59 + this.getMaxRadioStationNumber();
         result = result * 59 + this.getMinRadioStationNumber();
