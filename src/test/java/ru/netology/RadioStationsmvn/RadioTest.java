@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
     @Test
     public void test() {
-        Radio radio = new Radio(9, 0, 100, 0);
-        Assertions.assertEquals(9, radio.getMaxRadioStationNumber());
-        Assertions.assertEquals(0, radio.getMinRadioStationNumber());
+        Radio radio = new Radio(10);
+        Assertions.assertEquals(10, radio.getMaxRadioStationNumber());
+        Assertions.assertEquals(1, radio.getMinRadioStationNumber());
         Assertions.assertEquals(100, radio.getMaxSoundVolume());
         Assertions.assertEquals(0, radio.getMinSoundVolume());
         Assertions.assertEquals(10, radio.getNumberOfRadioChannels());
@@ -22,7 +22,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadio() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(1);
         int expected = 1;
         int actual = radio.getCurrentRadioStationNumber();
@@ -31,7 +31,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetToMaxChannel() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setToMaxTemp();
         int expected = 9;
         int actual = radio.getCurrentRadioStationNumber();
@@ -40,7 +40,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetToAboveMaxChannel() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(10);
         int expected = 0;
         int actual = radio.getCurrentRadioStationNumber();
@@ -49,7 +49,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetToBelowMaxChannel() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(-1);
         int expected = 9;
         int actual = radio.getCurrentRadioStationNumber();
@@ -58,7 +58,7 @@ public class RadioTest {
 
     @Test
     public void switchChannelsWithButtonNext() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(8);
         radio.switchChannelsWithButtonNext();
         int expected = 9;
@@ -68,7 +68,7 @@ public class RadioTest {
 
     @Test
     public void switchChannelsWithButtonNext1() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(9);
         radio.switchChannelsWithButtonNext();
         int expected = 0;
@@ -78,7 +78,7 @@ public class RadioTest {
 
     @Test
     public void switchChannelsWithButtonPrev() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(2);
         radio.switchChannelsWithButtonPrev();
         int expected = 1;
@@ -88,7 +88,7 @@ public class RadioTest {
 
     @Test
     public void limitSwitchChannelsWithButtonPrev() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(0);
         radio.switchChannelsWithButtonPrev();
         int expected = 9;
@@ -98,7 +98,7 @@ public class RadioTest {
 
     @Test
     public void shouldSoundVolume() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setSoundVolume(10);
         int expected = 10;
         int actual = radio.getSoundVolume();
@@ -107,7 +107,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetToMaxSoundVolume() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setToMaxSoundVolume();
         int expected = 100;
         int actual = radio.getSoundVolume();
@@ -116,7 +116,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetToAboveSoundVolume() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setSoundVolume(101);
         int expected = 100;
         int actual = radio.getSoundVolume();
@@ -125,7 +125,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetToBelowSoundVolume() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setSoundVolume(-1);
         int expected = 0;
         int actual = radio.getSoundVolume();
@@ -134,7 +134,7 @@ public class RadioTest {
 
     @Test
     public void increaseSoundVolumeWithButtonPlus() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setSoundVolume(1);
         radio.increaseSoundVolumeWithButtonPlus();
         int expected = 2;
@@ -144,7 +144,7 @@ public class RadioTest {
 
     @Test
     public void limitIncreaseSoundVolumeWithButtonPlus() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setSoundVolume(100);
         radio.increaseSoundVolumeWithButtonPlus();
         int expected = 100;
@@ -154,7 +154,7 @@ public class RadioTest {
 
     @Test
     public void decreaseSoundVolumeWithButtonMinus() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setSoundVolume(2);
         radio.increaseSoundVolumeWithButtonMinus();
         int expected = 1;
@@ -164,7 +164,7 @@ public class RadioTest {
 
     @Test
     public void limitDecreaseSoundVolumeWithButtonMinus1() {
-        Radio radio = new Radio(9, 0, 100, 0);
+        Radio radio = new Radio();
         radio.setSoundVolume(0);
         radio.increaseSoundVolumeWithButtonMinus();
         int expected = 0;
