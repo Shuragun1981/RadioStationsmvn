@@ -1,3 +1,8 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package ru.netology.RadioStationsmvn;
 
 public class Radio {
@@ -9,7 +14,7 @@ public class Radio {
     private int currentRadioStationNumber;
     private int soundVolume;
 
-    public Radio() {                           // без параметров
+    public Radio() {
         this.maxRadioStationNumber = 9;
         this.minRadioStationNumber = 0;
         this.maxSoundVolume = 100;
@@ -19,99 +24,184 @@ public class Radio {
         this.currentRadioStationNumber = 0;
     }
 
-    public Radio(int numberOfRadioChannels) { // с одним параметром принимающим желаемое количество радиостанций
-        minRadioStationNumber = 1;
-        maxRadioStationNumber = minRadioStationNumber + numberOfRadioChannels - 1;
+    public Radio(int numberOfRadioChannels) {
+        this.minRadioStationNumber = 1;
+        this.maxRadioStationNumber = this.minRadioStationNumber + numberOfRadioChannels - 1;
         this.numberOfRadioChannels = numberOfRadioChannels;
-        maxSoundVolume = 100;
-        minSoundVolume = 0;
-        currentRadioStationNumber = 0;
-        soundVolume = 50;
+        this.maxSoundVolume = 100;
+        this.minSoundVolume = 0;
+        this.currentRadioStationNumber = 0;
+        this.soundVolume = 50;
     }
 
     public int getMaxRadioStationNumber() {
-        return maxRadioStationNumber;
+        return this.maxRadioStationNumber;
     }
 
     public int getMinRadioStationNumber() {
-        return minRadioStationNumber;
+        return this.minRadioStationNumber;
     }
 
     public int getMaxSoundVolume() {
-        return maxSoundVolume;
+        return this.maxSoundVolume;
     }
 
     public int getMinSoundVolume() {
-        return minSoundVolume;
+        return this.minSoundVolume;
     }
 
     public int getNumberOfRadioChannels() {
-        return numberOfRadioChannels;
+        return this.numberOfRadioChannels;
     }
 
     public int getCurrentRadioStationNumber() {
-        return currentRadioStationNumber;
+        return this.currentRadioStationNumber;
     }
 
     public void setCurrentRadioStationNumber(int newCurrentRadioStationNumber) {
-        if (newCurrentRadioStationNumber < minRadioStationNumber) {
-            newCurrentRadioStationNumber = maxRadioStationNumber;
+        if (newCurrentRadioStationNumber < this.minRadioStationNumber) {
+            newCurrentRadioStationNumber = this.maxRadioStationNumber;
         }
-        if (newCurrentRadioStationNumber > maxRadioStationNumber) {
-            return;
+
+        if (newCurrentRadioStationNumber <= this.maxRadioStationNumber) {
+            this.currentRadioStationNumber = newCurrentRadioStationNumber;
         }
-        currentRadioStationNumber = newCurrentRadioStationNumber;
     }
 
     public void setToMaxTemp() {
-        currentRadioStationNumber = maxRadioStationNumber;
+        this.currentRadioStationNumber = this.maxRadioStationNumber;
     }
 
     public void switchChannelsWithButtonNext() {
-        if (currentRadioStationNumber == maxRadioStationNumber) {
-            currentRadioStationNumber = minRadioStationNumber;
+        if (this.currentRadioStationNumber == this.maxRadioStationNumber) {
+            this.currentRadioStationNumber = this.minRadioStationNumber;
         } else {
-            currentRadioStationNumber++;
+            ++this.currentRadioStationNumber;
         }
+
     }
 
     public void switchChannelsWithButtonPrev() {
-        if (currentRadioStationNumber == minRadioStationNumber) {
-            currentRadioStationNumber = maxRadioStationNumber;
+        if (this.currentRadioStationNumber == this.minRadioStationNumber) {
+            this.currentRadioStationNumber = this.maxRadioStationNumber;
         } else {
-            currentRadioStationNumber--;
+            --this.currentRadioStationNumber;
         }
+
     }
 
     public int getSoundVolume() {
-        return soundVolume;
+        return this.soundVolume;
     }
 
     public void setSoundVolume(int newSoundVolume) {
-        if (newSoundVolume < minSoundVolume) {
-            newSoundVolume = minSoundVolume;
+        if (newSoundVolume < this.minSoundVolume) {
+            newSoundVolume = this.minSoundVolume;
         }
-        if (newSoundVolume > maxSoundVolume) {
-            newSoundVolume = maxSoundVolume;
+
+        if (newSoundVolume > this.maxSoundVolume) {
+            newSoundVolume = this.maxSoundVolume;
         }
-        soundVolume = newSoundVolume;
+
+        this.soundVolume = newSoundVolume;
     }
 
     public void setToMaxSoundVolume() {
-        soundVolume = maxSoundVolume;
+        this.soundVolume = this.maxSoundVolume;
     }
 
     public void increaseSoundVolumeWithButtonPlus() {
-        if (soundVolume < maxSoundVolume) {
-            soundVolume++;
+        if (this.soundVolume < this.maxSoundVolume) {
+            ++this.soundVolume;
         } else {
-            soundVolume = maxSoundVolume;
+            this.soundVolume = this.maxSoundVolume;
         }
+
     }
 
     public void increaseSoundVolumeWithButtonMinus() {
-        if (soundVolume > minSoundVolume) {
-            soundVolume--;
+        if (this.soundVolume > this.minSoundVolume) {
+            --this.soundVolume;
         }
+
+    }
+
+    public Radio(int maxRadioStationNumber, int minRadioStationNumber, int maxSoundVolume, int minSoundVolume, int numberOfRadioChannels, int currentRadioStationNumber, int soundVolume) {
+        this.maxRadioStationNumber = maxRadioStationNumber;
+        this.minRadioStationNumber = minRadioStationNumber;
+        this.maxSoundVolume = maxSoundVolume;
+        this.minSoundVolume = minSoundVolume;
+        this.numberOfRadioChannels = numberOfRadioChannels;
+        this.currentRadioStationNumber = currentRadioStationNumber;
+        this.soundVolume = soundVolume;
+    }
+
+    public void setMaxRadioStationNumber(int maxRadioStationNumber) {
+        this.maxRadioStationNumber = maxRadioStationNumber;
+    }
+
+    public void setMinRadioStationNumber(int minRadioStationNumber) {
+        this.minRadioStationNumber = minRadioStationNumber;
+    }
+
+    public void setMaxSoundVolume(int maxSoundVolume) {
+        this.maxSoundVolume = maxSoundVolume;
+    }
+
+    public void setMinSoundVolume(int minSoundVolume) {
+        this.minSoundVolume = minSoundVolume;
+    }
+
+    public void setNumberOfRadioChannels(int numberOfRadioChannels) {
+        this.numberOfRadioChannels = numberOfRadioChannels;
+    }
+
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        } else if (!(o instanceof Radio)) {
+            return false;
+        } else {
+            Radio other = (Radio)o;
+            if (!other.canEqual(this)) {
+                return false;
+            } else if (this.getMaxRadioStationNumber() != other.getMaxRadioStationNumber()) {
+                return false;
+            } else if (this.getMinRadioStationNumber() != other.getMinRadioStationNumber()) {
+                return false;
+            } else if (this.getMaxSoundVolume() != other.getMaxSoundVolume()) {
+                return false;
+            } else if (this.getMinSoundVolume() != other.getMinSoundVolume()) {
+                return false;
+            } else if (this.getNumberOfRadioChannels() != other.getNumberOfRadioChannels()) {
+                return false;
+            } else if (this.getCurrentRadioStationNumber() != other.getCurrentRadioStationNumber()) {
+                return false;
+            } else {
+                return this.getSoundVolume() == other.getSoundVolume();
+            }
+        }
+    }
+
+    protected boolean canEqual(Object other) {
+        return other instanceof Radio;
+    }
+
+    public int hashCode() {
+        int PRIME = true;
+        int result = 1;
+        result = result * 59 + this.getMaxRadioStationNumber();
+        result = result * 59 + this.getMinRadioStationNumber();
+        result = result * 59 + this.getMaxSoundVolume();
+        result = result * 59 + this.getMinSoundVolume();
+        result = result * 59 + this.getNumberOfRadioChannels();
+        result = result * 59 + this.getCurrentRadioStationNumber();
+        result = result * 59 + this.getSoundVolume();
+        return result;
+    }
+
+    public String toString() {
+        int var10000 = this.getMaxRadioStationNumber();
+        return "Radio(maxRadioStationNumber=" + var10000 + ", minRadioStationNumber=" + this.getMinRadioStationNumber() + ", maxSoundVolume=" + this.getMaxSoundVolume() + ", minSoundVolume=" + this.getMinSoundVolume() + ", numberOfRadioChannels=" + this.getNumberOfRadioChannels() + ", currentRadioStationNumber=" + this.getCurrentRadioStationNumber() + ", soundVolume=" + this.getSoundVolume() + ")";
     }
 }
