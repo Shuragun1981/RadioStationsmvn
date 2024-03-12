@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
     @Test
     public void test() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         Assertions.assertEquals(10, radio.getMaxRadioStationNumber());
         Assertions.assertEquals(1, radio.getMinRadioStationNumber());
         Assertions.assertEquals(100, radio.getMaxSoundVolume());
@@ -16,7 +16,7 @@ public class RadioTest {
 
     @Test
     public void numberOfRadioChannels() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         Assertions.assertEquals(10, radio.getNumberOfRadioChannels());
     }
 
